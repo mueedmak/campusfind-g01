@@ -75,11 +75,11 @@ Browser tests cover filters/sorting, saved state across navigation, invalid/vali
 
 ## Required links — complete before submission
 
-- Shared GitHub/GitLab repository: **PENDING — create repository and add all three members**
+- Shared GitHub/GitLab repository: https://github.com/mueedmak/campusfind-g01 (private; add both teammates and share with the instructor)
 - Video: **PENDING — record and add accessible Drive/Unlisted YouTube link**
-- Vercel live URL: **PENDING — deployment workspace authorization required**
+- Vercel live URL: https://campusfind-g01.vercel.app
 
-For the bonus, deploy this folder as a Next.js project using `npm run build`. Add the verified production URL above and check access signed out. Deployed source must match the submitted version.
+The app is deployed on Vercel with public access. It was deployed directly from the verified source because the Vercel GitHub Login Connection is not configured. Configure that connection to enable automatic deployments on Git pushes. Keep the deployed source aligned with the submitted version.
 
 ## Submission and AI disclosure
 
