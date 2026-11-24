@@ -52,15 +52,17 @@ All page modules remain Server Components. Interactive Client Components need st
 
 Reusable typed components include Navbar, Footer, ButtonLink, PageHeading, StatusBadge, EmptyState, InfoCard, ItemCard, ItemList, ItemDetail, ReportForm, ContactForm, and StoreProvider. ItemList, PageHeading, InfoCard, and ContactForm are reused with different props. Lists use proper keys; images use `next/image`.
 
-## Proposed contribution plan — replace with actual work
+## Contributions and assigned follow-up work
 
-This is a suggested split, **not a claim that these contributions are already completed**. Each person must understand, improve, and commit their own real features. Update this table before submission; do not fabricate Git authorship.
+Abdul Mueed Malik completed the initial application implementation and deployment with the disclosed assistance of Codex. The following follow-up areas are assigned to Nameer and Inshal; their implementation contributions remain pending until they complete and commit the changes themselves. Update this table with the final work and commit references before submission.
 
-| Member            | Suggested ownership                                                   |
-| ----------------- | --------------------------------------------------------------------- |
-| Abdul Mueed Malik | Shared layout, navbar/footer, home/about, responsive styling          |
-| Nameer Khan       | Typed data, listing/search/filter/sort, cards/details, 404/loading    |
-| Inshal Yousaf     | Report/contact validation, shared state, saved items, session reports |
+| Member            | Work / responsibility                                                                                                                                                                                                         | Status                                                |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Abdul Mueed Malik | Initial frontend implementation, layout, pages, integration, deployment, and submission preparation                                                                                                                           | Initial implementation complete                       |
+| Nameer Khan       | Listing and item discovery: add a location filter and a clear-all-filters action; verify combined search/status/category/location filtering, empty states, and mobile layout                                                  | Assigned; implementation and personal commits pending |
+| Inshal Yousaf     | Reporting and form experience: add a controlled confirmation checkbox to the report form and a character counter for its description; validate the checkbox, associate its error message, and verify invalid/valid submission | Assigned; implementation and personal commits pending |
+
+See `docs/TEAM-HANDOFF.md` for file ownership, acceptance checks, and the Git workflow. Each member should explain the changes they actually made in the video.
 
 ## Verification
 
@@ -75,7 +77,7 @@ Browser tests cover filters/sorting, saved state across navigation, invalid/vali
 
 ## Required links — complete before submission
 
-- Shared GitHub/GitLab repository: https://github.com/mueedmak/campusfind-g01 (private; add both teammates and share with the instructor)
+- Shared GitHub/GitLab repository: https://github.com/mueedmak/campusfind-g01 (public; teammates still need collaborator access to push directly)
 - Video: **PENDING — record and add accessible Drive/Unlisted YouTube link**
 - Vercel live URL: https://campusfind-g01.vercel.app
 
