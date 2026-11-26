@@ -21,6 +21,20 @@ test("board filters, sorting, and saved items work across navigation", async ({
     .click();
   await page.getByRole("link", { name: "Saved items", exact: true }).click();
   await expect(page.locator(".item-card")).toHaveCount(1);
+  await page.getByLabel("Search items").fill("backpack");
+  await page.getByRole("button", { name: "Lost items", exact: true }).click();
+  await page.getByLabel("Category", { exact: true }).selectOption("Books");
+  await page.getByLabel("Sort by").selectOption("name");
+  await expect(page.locator(".item-card")).toHaveCount(0);
+  await page.getByRole("button", { name: "Clear filters" }).click();
+  await expect(page.getByLabel("Search items")).toHaveValue("");
+  await expect(page.getByRole("button", { name: "All items" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page.getByLabel("Category", { exact: true })).toHaveValue("All");
+  await expect(page.getByLabel("Sort by")).toHaveValue("newest");
+  await expect(page.locator(".item-card")).toHaveCount(1);
   await page
     .getByRole("button", {
       name: "Unsave House keys with green tag",
@@ -30,6 +44,58 @@ test("board filters, sorting, and saved items work across navigation", async ({
   await expect(
     page.getByRole("heading", { name: "No saved items yet" }),
   ).toBeVisible();
+});
+
+test("clear filters restores the item board defaults", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 900 });
+  await page.goto("/items");
+
+  const search = page.getByLabel("Search items");
+  const category = page.getByLabel("Category", { exact: true });
+  const sort = page.getByLabel("Sort by");
+  const allItems = page.getByRole("button", { name: "All items" });
+  const lostItems = page.getByRole("button", { name: "Lost items" });
+  const clear = page.getByRole("button", { name: "Clear filters" });
+  const cards = page.locator(".item-card");
+  await expect(clear).toBeVisible();
+  await expect(cards).toHaveCount(16);
+  const defaultOrder = await cards.locator("h3").allTextContents();
+
+  await search.fill("backpack");
+  await expect(cards).not.toHaveCount(16);
+  await clear.click();
+  await expect(search).toHaveValue("");
+
+  await lostItems.click();
+  await expect(lostItems).toHaveAttribute("aria-pressed", "true");
+  await clear.click();
+  await expect(allItems).toHaveAttribute("aria-pressed", "true");
+
+  await category.selectOption("Books");
+  await clear.click();
+  await expect(category).toHaveValue("All");
+
+  await sort.selectOption("name");
+  await clear.click();
+  await expect(sort).toHaveValue("newest");
+
+  await search.fill("zzzz-no-such-campus-item");
+  await lostItems.click();
+  await category.selectOption("Books");
+  await sort.selectOption("name");
+  await expect(
+    page.getByRole("heading", { name: "No matching items" }),
+  ).toBeVisible();
+  await clear.click();
+  await expect(search).toHaveValue("");
+  await expect(allItems).toHaveAttribute("aria-pressed", "true");
+  await expect(category).toHaveValue("All");
+  await expect(sort).toHaveValue("newest");
+  await expect(cards.locator("h3")).toHaveText(defaultOrder);
+  await expect(page.locator(".result-count")).toHaveText("16 items to explore");
+
+  await page.goto("/");
+  await expect(clear).toHaveCount(0);
 });
 
 test("report validates, appears on board, and opens a session detail", async ({

@@ -12,6 +12,14 @@ export function ItemList({ mode = "all" }: ItemListProps) {
   const [status, setStatus] = useState("All");
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("newest");
+
+  function clearFilters() {
+    setQuery("");
+    setStatus("All");
+    setCategory("All");
+    setSort("newest");
+  }
+
   const filtered = items
     .filter(
       (i) =>
@@ -90,6 +98,13 @@ export function ItemList({ mode = "all" }: ItemListProps) {
               </label>
             </div>
           </div>
+          <button
+            type="button"
+            className="button secondary"
+            onClick={clearFilters}
+          >
+            Clear filters
+          </button>
           <p className="result-count" aria-live="polite">
             {filtered.length} {filtered.length === 1 ? "item" : "items"} to
             explore
