@@ -165,16 +165,16 @@ export function ReportForm({ campus }: ReportFormProps) {
             setValues({ ...values, description: e.target.value })
           }
           aria-invalid={!!errors.description}
-         aria-describedby={
-  errors.description
-    ? "description-count description-error"
-    : "description-count"
-}
-/>
-<span id="description-count" className="fine">
-  {values.description.trim().length} characters — minimum 20
-</span>
-{errors.description && (
+          aria-describedby={
+            errors.description
+              ? "description-count description-error"
+              : "description-count"
+          }
+        />
+        <span id="description-count" className="fine">
+          {values.description.trim().length} characters — minimum 20
+        </span>
+        {errors.description && (
           <span id="description-error" className="error">
             {errors.description}
           </span>

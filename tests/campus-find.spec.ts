@@ -36,8 +36,25 @@ test("report validates, appears on board, and opens a session detail", async ({
   page,
 }) => {
   await page.goto("/report");
+  const description = page.getByLabel("Description", { exact: true });
+  await expect(page.locator("#description-count")).toHaveText(
+    "0 characters — minimum 20",
+  );
+  await description.fill("  hello  ");
+  await expect(page.locator("#description-count")).toHaveText(
+    "5 characters — minimum 20",
+  );
+  await expect(description).toHaveAttribute(
+    "aria-describedby",
+    "description-count",
+  );
+
   await page.getByRole("button", { name: "Publish report" }).click();
   await expect(page.getByText("Enter a valid email address.")).toBeVisible();
+  await expect(description).toHaveAttribute(
+    "aria-describedby",
+    "description-count description-error",
+  );
   await page
     .getByLabel("Item name", { exact: true })
     .fill("Purple test notebook");

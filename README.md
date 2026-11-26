@@ -54,13 +54,13 @@ Reusable typed components include Navbar, Footer, ButtonLink, PageHeading, Statu
 
 ## Contributions and assigned follow-up work
 
-Abdul Mueed Malik completed the initial application implementation and deployment with the disclosed assistance of Codex. The following follow-up areas are assigned to Nameer and Inshal; their implementation contributions remain pending until they complete and commit the changes themselves. Update this table with the final work and commit references before submission.
+Abdul Mueed Malik completed the initial application implementation and deployment with the disclosed assistance of Codex. Inshal's description feedback improvement is merged; Nameer's clear-filters improvement remains pending.
 
-| Member            | Work / responsibility                                                                                                                                                                                                         | Status                                                |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| Abdul Mueed Malik | Initial frontend implementation, layout, pages, integration, deployment, and submission preparation                                                                                                                           | Initial implementation complete                       |
-| Nameer Khan       | Listing and item discovery: add a location filter and a clear-all-filters action; verify combined search/status/category/location filtering, empty states, and mobile layout                                                  | Assigned; implementation and personal commits pending |
-| Inshal Yousaf     | Reporting and form experience: add a controlled confirmation checkbox to the report form and a character counter for its description; validate the checkbox, associate its error message, and verify invalid/valid submission | Assigned; implementation and personal commits pending |
+| Member            | Work / responsibility                                                                                       | Status                                                                                           |
+| ----------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Abdul Mueed Malik | Initial frontend implementation, layout, pages, integration, deployment, and submission preparation         | Initial implementation complete                                                                  |
+| Nameer Khan       | Add a Clear filters button resetting search, status, category, and sorting                                  | Assigned; implementation and personal commit pending                                             |
+| Inshal Yousaf     | Added live trimmed-description character count and accessible association of count/error text in ReportForm | Complete: commit `4994a49`, merged in [PR #1](https://github.com/mueedmak/campusfind-g01/pull/1) |
 
 See `docs/TEAM-HANDOFF.md` for file ownership, acceptance checks, and the Git workflow. Each member should explain the changes they actually made in the video.
 
