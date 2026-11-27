@@ -14,3 +14,7 @@ Still required from the group: actual contributions and commits from all three m
 ## Update — 27 November 2026
 
 Inshal's PR #1 is merged (commit 4994a49). The character counter, trimmed count, and conditional accessible description references passed browser checks. Production build passed, and all four browser tests passed (14.8 seconds). README now records Inshal's actual contribution; Nameer's Clear filters feature and the group video remain pending.
+
+## Nameer merge — 27 November 2026
+
+Nameer's PR #2 is merged (commit 05597c8). Production build passed and all five browser tests passed (15.5 seconds), including clearing combined filters and retaining saved items. Git history now contains commits by Mueed, Syed Inshal Yousaf, and NameerKhan7. README records both merged contributions. The group video, its README link, and final portal submission remain outstanding.

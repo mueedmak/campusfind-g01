@@ -2,13 +2,13 @@
 
 The initial implementation was completed by Abdul Mueed Malik with Codex assistance. These are new feature assignments for the other members to implement, test, and commit themselves. Record completed work accurately in the README after merging.
 
-## Nameer Khan — pending
+## Nameer Khan — completed
 
 Main file: `src/components/item-list.tsx`.
 
-Add a Clear filters button that resets search, status, category, and sorting to their defaults. Verify it after combining filters, including an empty result. Keep the control usable on mobile. Commit using your own account and open a pull request.
+Added a Clear filters button resetting search, status, category, and sorting, plus regression checks for resetting combined filters and retaining saved items.
 
-Suggested commit: `Add clear filters button to item board`.
+Commit: `05597c8` by NameerKhan7. Merged through PR #2: https://github.com/mueedmak/campusfind-g01/pull/2
 
 Video: explain the controlled filter state and how the reset handler restores it.
 

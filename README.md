@@ -52,14 +52,14 @@ All page modules remain Server Components. Interactive Client Components need st
 
 Reusable typed components include Navbar, Footer, ButtonLink, PageHeading, StatusBadge, EmptyState, InfoCard, ItemCard, ItemList, ItemDetail, ReportForm, ContactForm, and StoreProvider. ItemList, PageHeading, InfoCard, and ContactForm are reused with different props. Lists use proper keys; images use `next/image`.
 
-## Contributions and assigned follow-up work
+## Contributions
 
-Abdul Mueed Malik completed the initial application implementation and deployment with the disclosed assistance of Codex. Inshal's description feedback improvement is merged; Nameer's clear-filters improvement remains pending.
+Abdul Mueed Malik completed the initial application implementation and deployment with the disclosed assistance of Codex. Inshal's description feedback improvement and Nameer's clear-filters improvement are both merged.
 
 | Member            | Work / responsibility                                                                                       | Status                                                                                           |
 | ----------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | Abdul Mueed Malik | Initial frontend implementation, layout, pages, integration, deployment, and submission preparation         | Initial implementation complete                                                                  |
-| Nameer Khan       | Add a Clear filters button resetting search, status, category, and sorting                                  | Assigned; implementation and personal commit pending                                             |
+| Nameer Khan       | Added Clear filters resetting search, status, category, and sorting, with browser regression coverage       | Complete: commit `05597c8`, merged in [PR #2](https://github.com/mueedmak/campusfind-g01/pull/2) |
 | Inshal Yousaf     | Added live trimmed-description character count and accessible association of count/error text in ReportForm | Complete: commit `4994a49`, merged in [PR #1](https://github.com/mueedmak/campusfind-g01/pull/1) |
 
 See `docs/TEAM-HANDOFF.md` for file ownership, acceptance checks, and the Git workflow. Each member should explain the changes they actually made in the video.
